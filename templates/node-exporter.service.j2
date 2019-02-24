@@ -2,9 +2,9 @@
 Description=Node Exporter
 
 [Service]
-User=node_exporter
+User=node-exporter
 EnvironmentFile=/etc/default/node_exporter
-ExecStart=/opt/prometheus-node-exporter/node_exporter $OPTIONS
+ExecStart=/opt/node-exporter/node_exporter $OPTIONS
 
 [Install]
 WantedBy=multi-user.target

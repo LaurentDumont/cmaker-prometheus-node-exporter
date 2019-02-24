@@ -29,6 +29,7 @@
     owner: node-exporter
     group: node-exporter
     mode: u=rwx,g=rwx,o=r
+    remote_src: yes
 
 - name: Create the ENV file for the Systemd service.
   template:
@@ -45,4 +46,4 @@
 - name: Reload the Systemd daemon when the new Service file is installed.
   systemd:
     daemon_reload: yes
-  when: systemd_service_file_result.changed
+  when: systemd_service_file_result is changed
